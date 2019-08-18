@@ -71,8 +71,8 @@ module.exports = class BasePage {
     }
 
     getIssueTypeValue(){
-        this.issueType.waitForExist();
-        return this.issueType.getText();
+        this.issueType.waitForEnabled();
+        return this.issueType;
     }
 
 };

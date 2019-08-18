@@ -30,9 +30,8 @@ describe('Codecool Jira create Issue tests', () => {
         issuePage.openEditModal();
         issueModal.selectIssueType(editedType);
         issueModal.confirmChanges();
-        let currentType = issuePage.getIssueTypeValue();
-        assert.equal(editedType, currentType,
-            'Issue type was not changed, it is: ' + issuePage.getIssueTypeValue() + ' instead of: ' + editedType);
+        assert.equal('Bug', issuePage.getIssueTypeValue().getText(),
+            'Issue type was not changed, it is: ' + issuePage.getIssueTypeValue().getText() + ' instead of: ' + editedType);
     });
 
     it('Should let me delete an issue', () => {
